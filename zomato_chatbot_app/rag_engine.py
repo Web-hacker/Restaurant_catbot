@@ -18,7 +18,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 # -------------------------------
 try:
     embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-base-en-v1.5")
-    db = FAISS.load_local("data/faiss_bge_index", embedding_model, allow_dangerous_deserialization=True)
+    db = FAISS.load_local("../faiss_bge_index", embedding_model, allow_dangerous_deserialization=True)
 except Exception as e:
     print("❌ Failed to load FAISS index. Please ensure it's built and saved properly.")
     raise e
