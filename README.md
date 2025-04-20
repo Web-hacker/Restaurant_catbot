@@ -118,8 +118,6 @@ This launches the chatbot interface in your browser. Ask questions like:
 
 5. Real-time scraping for live menu updates
 
-## 📄 License
-This project is open-sourced under the MIT License.
 
 ## 👨‍💻 Maintainer
 Developed by Anubhav Gyanendra Singh
