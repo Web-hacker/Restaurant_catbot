@@ -17,7 +17,6 @@ ENV/
 
 # Model & Index Files ( HuggingFace caches, etc.)
 *.bin
-*.pt
 *.safetensors
 *.onnx
 index.*
