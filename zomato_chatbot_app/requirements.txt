@@ -1,0 +1,38 @@
+# ───── Core ML & Transformers ─────
+transformers==4.38.2
+sentence-transformers==2.5.1
+huggingface-hub==0.22.2
+
+# ───── FAISS for Embeddings ─────
+faiss-cpu==1.7.4
+
+# ───── LangChain and Integration ─────
+langchain==0.1.16
+langchain-community==0.0.35
+langchain-huggingface==0.0.6
+
+# ───── Streamlit Frontend ─────
+streamlit==1.32.2
+
+# ───── Tokenization & Text Utilities ─────
+tokenizers==0.15.2
+tqdm==4.66.2
+nest_asyncio==1.6.0
+
+# ───── JSON, Math & Utility ─────
+numpy==1.26.4
+pydantic==2.6.4
+pydantic-core==2.16.3
+markdown==3.5.2
+
+# ───── Web Scraping ─────
+beautifulsoup4==4.12.3
+selenium==4.18.1
+lxml==5.1.0
+requests==2.31.0
+urllib3==2.2.1
+html5lib==1.1
+fake-useragent==1.5.1
+
+# Optional but helpful for working with CSV, OS, etc.
+pandas==2.2.2
