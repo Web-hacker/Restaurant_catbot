@@ -52,10 +52,6 @@ desktop.ini
 .streamlit/config.toml
 .streamlit/secrets.toml
 
-# CSV and scraped JSON results (optional: keep if needed for documentation)
-*.csv
-*.json
-*.xlsx
 
 # Markdown previews / PDF artifacts
 *.pdf
