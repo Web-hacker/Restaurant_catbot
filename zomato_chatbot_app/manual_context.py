@@ -1,7 +1,7 @@
 import json
 
 # Load the knowledge base
-with open("data/knowledge_base.json", "r", encoding="utf-8") as f:
+with open("../Structured_data/knowledge_base.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 def give_custom_context(dish_query):

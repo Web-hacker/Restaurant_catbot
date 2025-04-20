@@ -6,7 +6,7 @@ from langchain.docstore.document import Document
 import os
 
 # === Step 1: Load the optimized corpus ===
-with open("optimized_corpus.json", "r", encoding="utf-8") as f:
+with open("../Structured_data/optimized_corpus.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 documents = data["documents"]
