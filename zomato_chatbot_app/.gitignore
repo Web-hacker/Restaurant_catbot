@@ -15,9 +15,7 @@ ENV/
 # VS Code settings
 .vscode/
 
-# Model & Index Files (saved FAISS files, HuggingFace caches, etc.)
-*.faiss
-*.pkl
+# Model & Index Files ( HuggingFace caches, etc.)
 *.bin
 *.pt
 *.safetensors
