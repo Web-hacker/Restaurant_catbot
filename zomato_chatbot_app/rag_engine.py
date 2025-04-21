@@ -40,7 +40,7 @@ except Exception as e:
 # Define retriever with MMR
 retriever = db.as_retriever(
     search_type="mmr",
-    search_kwargs={"k": 4, "fetch_k": 10}
+    search_kwargs={"k": 4, "fetch_k": 8}
 )
 
 # -------------------------------

@@ -43,7 +43,7 @@ def give_custom_context(dish_query: str) -> str:
     if "restaurant-list" in dish_query.lower():
         results = [r["restaurant_name"] for r in data]
         if results:
-            return "\n".join(results)
+            return ", ".join(results)
         return "No restaurants found in the knowledge base."
 
     # --- Case 2: Get menu of a specific restaurant ---
@@ -60,7 +60,7 @@ def give_custom_context(dish_query: str) -> str:
                 break  # Stop after first match
 
         if results and restaurant_name:
-            return "\n".join([
+            return "  :;  ".join([
                 f"{restaurant_name} serves {dish['dish_name']} at price {dish['price']}"
                 for dish in results
             ])
@@ -75,9 +75,10 @@ def give_custom_context(dish_query: str) -> str:
                         "restaurant_name": restaurant["restaurant_name"],
                         "dish_name": dish["dish_name"]
                     })
+                    break
 
         if results:
-            return "\n".join([
+            return " , ".join([
                 f"{match['restaurant_name']} serves {match['dish_name']}"
                 for match in results
             ])

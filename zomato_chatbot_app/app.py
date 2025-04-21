@@ -25,9 +25,9 @@ st.markdown("Ask anything about restaurants, menus, cuisines, or specific dishes
 # Sidebar Instructions
 # -------------------------------
 with st.sidebar:
-    st.header("🧠 How to Use")
+    st.header("How to Use")
     st.markdown("""
-**Manual Retrieval Commands:**
+**Special Retrieval Commands:**
 
 - 🏪 `restaurant-list`  
   ➤ Lists all restaurant names.
@@ -40,7 +40,6 @@ with st.sidebar:
   ➤ Shows which restaurant serves a given dish.  
   _Example: `serves-dish-item Butter Paneer`_
 
-These keywords activate a custom structured search instead of generative LLM response.
 """)
 
 # -------------------------------
