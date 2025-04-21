@@ -3,7 +3,11 @@
 This project is a powerful Generative AI chatbot that lets users ask natural language questions about restaurants, menus, cuisines, and pricing using Retrieval-Augmented Generation (RAG). It combines intelligent vector search using FAISS with Hugging Face transformer models to provide accurate, context-based answers.
 
 ---
+## Implementation Demo Video
 
+[![Watch the video](https://img.youtube.com/vi/qCvL_uKZXUI/hqdefault.jpg)](https://www.youtube.com/watch?v=qCvL_uKZXUI) 
+
+---
 ## 📌 Key Features
 
 - ✅ Retrieval-Augmented Generation (RAG) pipeline
