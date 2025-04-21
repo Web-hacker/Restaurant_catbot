@@ -43,14 +43,14 @@ This project is a powerful Generative AI chatbot that lets users ask natural lan
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/zomato-rag-chatbot.git
-cd zomato-rag-chatbot
+git clone https://github.com/Web-hacker/Restaurant_catbot.git
+cd Restaurant_catbot
 ```
 ### 2. Create and activate a virtual environment
 
 ```bash
-conda create -n zomato-chatbot python=3.10
-conda activate zomato-chatbot
+conda create -n Restaurant_catbot python=3.10
+conda activate Restaurant_catbot
 ```
 ### 3. Install required packages
 
