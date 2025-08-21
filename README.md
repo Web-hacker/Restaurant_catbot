@@ -1,6 +1,6 @@
-# 🍽️ Restaurant RAG Chatbot
+# 🍽️ Restaurant RAG Chatbot (Powered by Google Gemini)
 
-This project is a powerful Generative AI chatbot that lets users ask natural language questions about restaurants, menus, cuisines, and pricing using Retrieval-Augmented Generation (RAG). It combines intelligent vector search using FAISS with Hugging Face transformer models to provide accurate, context-based answers.
+This project is a powerful Generative AI chatbot that lets users ask natural language questions about restaurants, menus, cuisines, and pricing. It uses a Retrieval-Augmented Generation (RAG) architecture, powered by Google's state-of-the-art Gemini models for both embedding and response generation, with a high-performance FAISS vector index for retrieval.
 
 ---
 ## Implementation Demo Video
@@ -10,31 +10,29 @@ This project is a powerful Generative AI chatbot that lets users ask natural lan
 ---
 ## 📌 Key Features
 
-- ✅ Retrieval-Augmented Generation (RAG) pipeline
-- 🔍 Embedding via `BAAI/bge-base-en-v1.5`
-- 🧠 Local answer generation with `MBZUAI/LaMini-Flan-T5-783M`
-- 🧾 Token-safe prompt handling
-- 🧩 Manual structured fallback for better list/lookup-type answers
-- 🧠 Streamlit interface with conversation memory and markdown rendering
-
+- ✅ **Retrieval-Augmented Generation (RAG)** pipeline with Google Gemini.
+- 🔍 **High-Quality Embeddings** via `models/embedding-001`.
+- 🧠 **Advanced Response Generation** with `gemini-2.5-pro`.
+- ⚡ **High-Performance Search** using a FAISS vector index.
+- 🌐 **Interactive UI** built with Streamlit, featuring conversation memory.
 
 ---
 
 ## 🚀 How It Works
 
-1. **User asks a question**
-2. **Retriever** uses FAISS (built on BGE embeddings) to fetch relevant restaurant/menu data
-3. **LLM (LaMini-Flan-T5)** generates a natural language response using a custom prompt template
-4. If a query is a known structured type, a fallback **manual retriever** answers from JSON directly
+1.  **User asks a question** in the Streamlit interface.
+2.  **Gemini Embedding Model** converts the query into a vector.
+3.  **FAISS Index** performs a similarity search to find the most relevant dishes from the knowledge base.
+4.  **Gemini Pro LLM** receives the user's query and the retrieved context, then generates a natural, helpful, and context-aware response.
 
 ---
 
 ## 🧠 Models Used
 
-| Component        | Model                                  |
-|------------------|----------------------------------------|
-| Embeddings       | `BAAI/bge-base-en-v1.5` (Cosine-based) |
-| LLM (Answer Gen) | `MBZUAI/LaMini-Flan-T5-783M` (local)   |
+| Component              | Model                   | Provider |
+| ---------------------- | ----------------------- | -------- |
+| Embeddings (Retrieval) | `models/embedding-001`  | Google   |
+| LLM (Answer Gen)       | `gemini-2.5-pro`        | Google   |
 
 ---
 
@@ -46,93 +44,68 @@ This project is a powerful Generative AI chatbot that lets users ask natural lan
 git clone https://github.com/Web-hacker/Restaurant_catbot.git
 cd Restaurant_catbot
 ```
+
 ### 2. Create and activate a virtual environment
 
 ```bash
-conda create -n Restaurant_catbot python=3.10
-conda activate Restaurant_catbot
+conda create -n restaurant_chatbot python=3.10
+conda activate restaurant_chatbot
 ```
+
 ### 3. Install required packages
 
+Navigate to the application directory and install the dependencies:
 ```bash
+cd zomato_chatbot_app
 pip install -r requirements.txt
 ```
-### 4. (Optional) Rebuild FAISS Index
 
-If not using the saved index:
+### 4. Set up your Google API Key
+
+Create a `.env` file in the root of the project directory (alongside `transform_data.py`). Add your Google API key to this file:
+
+```
+GOOGLE_API_KEY="YOUR_GEMINI_API_KEY"
+```
+
+### 5. Build the FAISS Index
+
+Before running the app, you need to create the vector database from your knowledge base. Run the following script from the root directory:
 
 ```bash
-python build_faiss_index.py
+python create_vector_db.py
 ```
+This will generate `faiss_index.bin` and `metadata_corpus.json` inside a `faiss_index` folder.
 
 ---
 
 ## 💬 Run the Streamlit App
 
+From inside the `zomato_chatbot_app` directory, run:
+
 ```bash
-streamlit run app.py
+streamlit run updated_app.py
 ```
+
 This launches the chatbot interface in your browser. Ask questions like:
 
-1. “Which restaurants serve Chinese food?”
-
-2. “Does ABC Restaurant have veg items?”
-
-3. “Compare prices of biryani at restaurant ABC and restaurant XYZ”
-
----
-
-## Sample Queries Supported
-
-1. Menu item lookup
-
-2. Price of dish/cuisine
-
-3. Vegetarian / vegan options
-
-4. Restaurant rating comparison
-
-5. Delivery times
-
-6. Structured queries: "restaurant-list::city" or "serves-dish-item::paneer butter masala"
-
+1.  “Which restaurants serve Chinese food?”
+2.  “Does Anandeshwar dhaba have veg items?”
+3.  “What's a good place for a spicy paneer dish?”
 
 ---
 
 ## Tech Stack
-1. 🐍 Python 3.10
-
-2. 🧠 LangChain + Hugging Face Transformers
-
-3. 💾 FAISS for dense vector retrieval
-
-4. 🌐 Streamlit for UI
+1.  🐍 Python 3.10
+2.  🧠 Google Generative AI SDK (for Gemini)
+3.  💾 FAISS for dense vector retrieval
+4.  🌐 Streamlit for UI
 
 ---
-
-## Future Improvements
-
-1. Upgrade to Mistral-7B or LLaMA models with more memory
-
-2. Add multilingual support
-
-3. Advanced query rewriting
-
-4. Fine-tuning LaMini-Flan for improved coherence
-
-5. Real-time scraping for live menu updates
-
 
 ## 👨‍💻 Maintainer
 Developed by Anubhav Gyanendra Singh
 
-
 ## 🙌 Acknowledgements
-Hugging Face 🤗
-
-LangChain Team
-
-BAAI & MBZUAI research teams
-
-
-
+- Google for the powerful Gemini models.
+- The open-source community for creating tools like FAISS and Streamlit.
