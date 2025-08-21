@@ -12,7 +12,7 @@ Features:
 """
 
 import streamlit as st
-from rag_engine import get_rag_response  # ⬅️ Core RAG logic
+from updated_rag_engine import get_rag_response  # ⬅️ Core RAG logic
 
 # -------------------------------
 # Streamlit Config & Header
